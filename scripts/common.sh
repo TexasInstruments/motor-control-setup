@@ -249,7 +249,7 @@ install_mcu_plus_sdk() {
 
     echo "[mcu_plus_sdk_${platform}_${version_underscore}] Checking ..."
 
-    if [ ! -d "${install_dir}"/mcu_plus_sdk_${platform}_${version_underscore} ]
+    if [ ! -d ./motor_control_sdk/mcu_plus_sdk_${platform}_${version_underscore} ]
     then
         echo "[ mcu_plus_sdk_${platform}_${version_underscore} ]  Downloading ..."
         wget ${mcu_plus_sdk_url}/${mcu_plus_sdk_download_file} 1>/dev/null

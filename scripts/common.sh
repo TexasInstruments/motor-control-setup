@@ -258,6 +258,8 @@ install_mcu_plus_sdk() {
         chmod +x ${mcu_plus_sdk_download_file}
         echo "[ mcu_plus_sdk_${platform}_${version_underscore} ]  Installing ..."
         ./${mcu_plus_sdk_download_file} --mode unattended --prefix "${install_dir}"
+        # Remove version value from MCU + SDK installation path
+        mv ${install_dir}/mcu_plus_sdk_${platform}_${version_underscore} ${install_dir}/mcu_plus_sdk
         #Clean-up
         rm ${mcu_plus_sdk_download_file} 1>/dev/null
         echo "[ mcu_plus_sdk_${platform}_${version_underscore} ]  Done ..."

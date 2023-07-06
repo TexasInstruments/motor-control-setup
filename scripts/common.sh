@@ -252,14 +252,14 @@ install_mcu_plus_sdk() {
     if [ ! -d "${install_dir}"/mcu_plus_sdk_${platform}_${version_underscore} ]
     then
         echo "[ mcu_plus_sdk_${platform}_${version_underscore} ]  Downloading ..."
-		pwd
-        wget ${mcu_plus_sdk_url}/${mcu_plus_sdk_download_file}
-		ls -l
+        wget ${mcu_plus_sdk_url}/${mcu_plus_sdk_download_file} 1>/dev/null
         chmod +x ${mcu_plus_sdk_download_file}
         echo "[ mcu_plus_sdk_${platform}_${version_underscore} ]  Installing ..."
-        ./${mcu_plus_sdk_download_file} --mode unattended --prefix "${install_dir}"
+        ./${mcu_plus_sdk_download_file} --mode unattended --prefix ./motor_control_sdk
         # Remove version value from MCU + SDK installation path
-        mv ${install_dir}/mcu_plus_sdk_${platform}_${version_underscore} ${install_dir}/mcu_plus_sdk
+        pushd motor_control_sdk
+        mv mcu_plus_sdk_${platform}_${version_underscore} mcu_plus_sdk
+        popd
         #Clean-up
         rm ${mcu_plus_sdk_download_file} 1>/dev/null
         echo "[ mcu_plus_sdk_${platform}_${version_underscore} ]  Done ..."

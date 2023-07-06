@@ -79,7 +79,7 @@ else
     install_gcc_aarch64 ${GCC_AARCH64_VERSION} ${gcc_aarch64_install_folder} ${gcc_aarch64_download_file} ${install_dir}
     install_gcc_arm     ${GCC_ARM_VERSION}     ${gcc_arm_install_folder}     ${gcc_arm_download_file}     ${install_dir} ${GCC_ARM_VERSION_FOLDER}
     install_syscfg  ${SYSCFG_VERSION} ${install_dir}
-    install_mcu_plus_sdk  ${mcu_sdk_version} ${platform} ${install_dir}
+    install_mcu_plus_sdk  ${mcu_sdk_version} ${platform} ${motor_control_folder}
     if [ "$skip_nodejs" == "false" ]; then
         install_nodejs  ${NODEJS_VERSION} ${motor_control_folder}
     fi

@@ -15,7 +15,17 @@ GCC_AARCH64_VERSION="9.2-2019.12"
 GCC_ARM_VERSION="7-2017-q4-major"
 GCC_ARM_VERSION_FOLDER="7-2017q4"
 
-#MCU PLUS SDK
+#MCU PLUS SDK NIGHTLY URL
+MCU_PLUS_SDK_AM64X_NIGHTLY_URL="http://mcupnas.dhcp.ti.com/release_area/nightly_builds/mcu_plus_sdk_am64x_nightly/latest/artifacts/output/webgen/exports"
+MCU_PLUS_SDK_AM243X_NIGHTLY_URL="http://mcupnas.dhcp.ti.com/release_area/nightly_builds/mcu_plus_sdk_am243x_nightly/latest/artifacts/output/webgen/exports"
+MCU_PLUS_SDK_AM263X_NIGHTLY_URL="http://mcupnas.dhcp.ti.com/release_area/nightly_builds/mcu_plus_sdk_am263x_nightly/latest/artifacts/output/webgen/exports"
+
+#MCU PLUS SDK RELEASE URL
+MCU_PLUS_SDK_AM64X_RELEASE_URL="https://dr-download.ti.com/secure/software-development/software-development-kit-sdk/MD-SfkcjYAjGS"
+MCU_PLUS_SDK_AM243X_RELEASE_URL="https://dr-download.ti.com/secure/software-development/software-development-kit-sdk/MD-ouHbHEm1PK"
+MCU_PLUS_SDK_AM263X_RELEASE_URL="https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-r5FY9rRaGv"
+
+#MCU PLUS SDK VERSION
 MCU_PLUS_SDK_AM64X="09.00.00.01"
 MCU_PLUS_SDK_AM243X="09.00.00.01"
 MCU_PLUS_SDK_AM263X="09.00.00.01"

@@ -65,6 +65,7 @@ clang_install_file="ti_cgt_armllvm_${CGT_TI_ARM_CLANG_VERSION}.${CGT_TI_ARM_CLAN
 
 
 # MCU + SDK
+mcu_plus_sdk_url="${MCU_PLUS_SDK_AM243X_NIGHTLY_URL}"
 mcu_sdk_version="${MCU_PLUS_SDK_AM243X}"
 platform="am243x"
 
@@ -76,7 +77,7 @@ else
     #install_clang   ${CGT_TI_ARM_CLANG_VERSION} ${clang_url_folder} ${clang_install_folder} ${clang_install_file} ${install_dir}
     install_gcc_arm ${GCC_ARM_VERSION} ${gcc_arm_install_folder} ${gcc_arm_download_file} ${install_dir} ${GCC_ARM_VERSION_FOLDER}
     install_syscfg  ${SYSCFG_VERSION} ${install_dir}
-    install_mcu_plus_sdk  ${mcu_sdk_version} ${platform} ${motor_control_folder}
+    install_mcu_plus_sdk  ${mcu_sdk_version} ${platform} ${motor_control_folder} ${mcu_plus_sdk_url}
     if [ "$skip_nodejs" == "false" ]; then
         install_nodejs  ${NODEJS_VERSION} ${motor_control_folder}
     fi

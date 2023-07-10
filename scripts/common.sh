@@ -243,16 +243,16 @@ install_mcu_plus_sdk() {
     local version=$1
     local platform=$2
     local install_dir=$3
+    local mcu_plus_sdk_url=$4
     local version_underscore=`echo ${version} | sed -e "s|\.|_|g"`
-	local mcu_plus_sdk_url="http://mcupnas.dhcp.ti.com/release_area/nightly_builds/mcu_plus_sdk_${platform}_nightly/latest/artifacts/output/webgen/exports"
-	local mcu_plus_sdk_download_file="mcu_plus_sdk_${platform}_${version_underscore}-linux-x64-installer.run"
+    local mcu_plus_sdk_download_file="mcu_plus_sdk_${platform}_${version_underscore}-linux-x64-installer.run"
 
     echo "[mcu_plus_sdk_${platform}_${version_underscore}] Checking ..."
 
     if [ ! -d "${install_dir}"/mcu_plus_sdk_${platform}_${version_underscore} ]
     then
         echo "[ mcu_plus_sdk_${platform}_${version_underscore} ]  Downloading ..."
-        wget ${mcu_plus_sdk_url}/${mcu_plus_sdk_download_file} 1>/dev/null
+        wget -q ${mcu_plus_sdk_url}/${mcu_plus_sdk_download_file} 1>/dev/null
         chmod +x ${mcu_plus_sdk_download_file}
         echo "[ mcu_plus_sdk_${platform}_${version_underscore} ]  Installing ..."
         ./${mcu_plus_sdk_download_file} --mode unattended --prefix ${install_dir}

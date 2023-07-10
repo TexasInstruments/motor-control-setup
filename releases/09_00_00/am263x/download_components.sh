@@ -62,6 +62,7 @@ clang_install_file="ti_cgt_armllvm_${CGT_TI_ARM_CLANG_VERSION}.${CGT_TI_ARM_CLAN
 
 
 # MCU + SDK
+mcu_plus_sdk_url=${MCU_PLUS_SDK_AM263X_NIGHTLY_URL}
 mcu_sdk_version="${MCU_PLUS_SDK_AM263X}"
 platform="am263x"
 

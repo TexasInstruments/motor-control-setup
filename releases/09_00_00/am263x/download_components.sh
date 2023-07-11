@@ -73,7 +73,7 @@ else
     install_ccs     ${CCS_VERSION} ${install_dir}
     #install_clang   ${CGT_TI_ARM_CLANG_VERSION} ${clang_url_folder} ${clang_install_folder} ${clang_install_file} ${install_dir}
     install_syscfg  ${SYSCFG_VERSION} ${install_dir}
-    install_mcu_plus_sdk  ${mcu_sdk_version} ${platform} ${motor_control_folder}
+    install_mcu_plus_sdk  ${mcu_sdk_version} ${platform} ${motor_control_folder} ${mcu_plus_sdk_url}
     if [ "$skip_nodejs" == "false" ]; then
         install_nodejs  ${NODEJS_VERSION} ${motor_control_folder}
     fi

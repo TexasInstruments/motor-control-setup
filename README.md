@@ -16,6 +16,8 @@ for Motor Control SDK which includes but are not limited to:
 - TI ARM CLANG
 - SysConfig
 - NodeJS and required packages
+- MCU + SDK
+- Industrial Communications SDK
 
 Currently the scripts only support a Linux / Git Bash environment. Support will 
 be added soon for Windows native environment.

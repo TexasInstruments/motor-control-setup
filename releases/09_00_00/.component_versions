@@ -15,17 +15,42 @@ GCC_AARCH64_VERSION="9.2-2019.12"
 GCC_ARM_VERSION="7-2017-q4-major"
 GCC_ARM_VERSION_FOLDER="7-2017q4"
 
+#MCU PLUS SDK VERSION
+MCU_PLUS_SDK_AM64X="09.00.00.31"
+MCU_PLUS_SDK_AM243X="09.00.00.30"
+MCU_PLUS_SDK_AM263X="09.00.00.33"
+
 #MCU PLUS SDK NIGHTLY URL
 MCU_PLUS_SDK_AM64X_NIGHTLY_URL="http://mcupnas.dhcp.ti.com/release_area/nightly_builds/mcu_plus_sdk_am64x_nightly/latest/artifacts/output/webgen/exports"
 MCU_PLUS_SDK_AM243X_NIGHTLY_URL="http://mcupnas.dhcp.ti.com/release_area/nightly_builds/mcu_plus_sdk_am243x_nightly/latest/artifacts/output/webgen/exports"
 MCU_PLUS_SDK_AM263X_NIGHTLY_URL="http://mcupnas.dhcp.ti.com/release_area/nightly_builds/mcu_plus_sdk_am263x_nightly/latest/artifacts/output/webgen/exports"
 
-#MCU PLUS SDK RELEASE URL
-MCU_PLUS_SDK_AM64X_RELEASE_URL="https://dr-download.ti.com/secure/software-development/software-development-kit-sdk/MD-SfkcjYAjGS"
-MCU_PLUS_SDK_AM243X_RELEASE_URL="https://dr-download.ti.com/secure/software-development/software-development-kit-sdk/MD-ouHbHEm1PK"
-MCU_PLUS_SDK_AM263X_RELEASE_URL="https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-r5FY9rRaGv"
+#MCU PLUS SDK RC URL
+MCU_PLUS_SDK_AM64X_RC_URL="http://tigt_qa.dal.englab.ti.com/qacm/test_area/MCU_PLUS_SDK/${MCU_PLUS_SDK_AM64X:8}/am64x"
+MCU_PLUS_SDK_AM243X_RC_URL="http://tigt_qa.dal.englab.ti.com/qacm/test_area/MCU_PLUS_SDK/${MCU_PLUS_SDK_AM243X:8}/am243x"
+MCU_PLUS_SDK_AM263X_RC_URL="http://tigt_qa.dal.englab.ti.com/qacm/test_area/MCU_PLUS_SDK/${MCU_PLUS_SDK_AM263X:8}/am263x"
 
-#MCU PLUS SDK VERSION
-MCU_PLUS_SDK_AM64X="09.00.00.01"
-MCU_PLUS_SDK_AM243X="09.00.00.01"
-MCU_PLUS_SDK_AM263X="09.00.00.01"
+#MCU PLUS SDK RELEASE URL
+MCU_PLUS_SDK_AM64X_RELEASE_URL="https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-SfkcjYAjGS/${MCU_PLUS_SDK_AM64X}"
+MCU_PLUS_SDK_AM243X_RELEASE_URL="https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-ouHbHEm1PK/${MCU_PLUS_SDK_AM243X}"
+MCU_PLUS_SDK_AM263X_RELEASE_URL="https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-r5FY9rRaGv/${MCU_PLUS_SDK_AM263X}"
+
+#INDUSTRIAK COMMUNICATIONS SDK VERSION
+IND_COMMS_SDK_AM64X="09.00.00.02"
+IND_COMMS_SDK_AM243X="09.00.00.02"
+IND_COMMS_SDK_AM263X="09.00.00.02"
+
+#INDUSTRIAL COMMUNICATIONS SDK NIGHTLY URL
+IND_COMMS_SDK_AM64X_NIGHTLY_URL="http://mcupnas.dhcp.ti.com/release_area/nightly_builds/mcu_plus_sdk_am64x_nightly/latest/artifacts/output/webgen/exports"
+IND_COMMS_SDK_AM243X_NIGHTLY_URL="http://mcupnas.dhcp.ti.com/release_area/nightly_builds/mcu_plus_sdk_am243x_nightly/latest/artifacts/output/webgen/exports"
+IND_COMMS_SDK_AM263X_NIGHTLY_URL="http://mcupnas.dhcp.ti.com/release_area/nightly_builds/mcu_plus_sdk_am263x_nightly/latest/artifacts/output/webgen/exports"
+
+#INDUSTRIAL COMMUNICATIONS SDK RC URL
+IND_COMMS_SDK_AM64X_RC_URL="http://tigt_qa.dal.englab.ti.com/qacm/test_area/INDUSTRIAL-COMMUNICATIONS-SDK/${IND_COMMS_SDK_AM64X:8}/am64x"
+IND_COMMS_SDK_AM243X_RC_URL="http://tigt_qa.dal.englab.ti.com/qacm/test_area/INDUSTRIAL-COMMUNICATIONS-SDK/${IND_COMMS_SDK_AM243X:8}/am243x"
+IND_COMMS_SDK_AM263X_RC_URL="http://tigt_qa.dal.englab.ti.com/qacm/test_area/INDUSTRIAL-COMMUNICATIONS-SDK/${IND_COMMS_SDK_AM263X:8}/am263x"
+
+#INDUSTRIAL COMMUNICATIONS SDK RELEASE URL
+IND_COMMS_SDK_AM64X_RELEASE_URL="https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-SfkcjYAjGS/${IND_COMMS_SDK_AM64X}"
+IND_COMMS_SDK_AM243X_RELEASE_URL="https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-ouHbHEm1PK/${IND_COMMS_SDK_AM243X}"
+IND_COMMS_SDK_AM263X_RELEASE_URL="https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-r5FY9rRaGv/${IND_COMMS_SDK_AM263X}"

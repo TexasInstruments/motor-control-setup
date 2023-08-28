@@ -271,7 +271,7 @@ install_ind_comms_sdk() {
     local version=$1
     local platform=$2
     local install_dir=$3
-    local mcu_plus_sdk_url=$4
+    local ind_comms_sdk_url=$4
     local version_underscore=`echo ${version} | sed -e "s|\.|_|g"`
     local ind_comms_sdk_download_file="ind_comms_sdk_${platform}_${version_underscore}-linux-x64-installer.run"
 

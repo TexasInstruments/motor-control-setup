@@ -16,9 +16,9 @@ GCC_ARM_VERSION="7-2017-q4-major"
 GCC_ARM_VERSION_FOLDER="7-2017q4"
 
 #MCU PLUS SDK VERSION
-MCU_PLUS_SDK_AM64X="09.00.00.31"
-MCU_PLUS_SDK_AM243X="09.00.00.30"
-MCU_PLUS_SDK_AM263X="09.00.00.33"
+MCU_PLUS_SDK_AM64X="09.00.00.35"
+MCU_PLUS_SDK_AM243X="09.00.00.35"
+MCU_PLUS_SDK_AM263X="09.00.00.35"
 
 #MCU PLUS SDK NIGHTLY URL
 MCU_PLUS_SDK_AM64X_NIGHTLY_URL="http://mcupnas.dhcp.ti.com/release_area/nightly_builds/mcu_plus_sdk_am64x_nightly/latest/artifacts/output/webgen/exports"
@@ -41,9 +41,9 @@ MCU_PLUS_SDK_AM243X_RELEASE_URL="https://dr-download.ti.com/software-development
 MCU_PLUS_SDK_AM263X_RELEASE_URL="https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-r5FY9rRaGv/${MCU_PLUS_SDK_AM263X}"
 
 #INDUSTRIAK COMMUNICATIONS SDK VERSION
-IND_COMMS_SDK_AM64X="09.00.00.02"
-IND_COMMS_SDK_AM243X="09.00.00.02"
-IND_COMMS_SDK_AM263X="09.00.00.02"
+IND_COMMS_SDK_AM64X="09.00.00.03"
+IND_COMMS_SDK_AM243X="09.00.00.03"
+IND_COMMS_SDK_AM263X="09.00.00.03"
 
 #INDUSTRIAL COMMUNICATIONS SDK NIGHTLY URL
 IND_COMMS_SDK_AM64X_NIGHTLY_URL="http://mcupnas.dhcp.ti.com/release_area/nightly_builds/mcu_plus_sdk_am64x_nightly/latest/artifacts/output/webgen/exports"

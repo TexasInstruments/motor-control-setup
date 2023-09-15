@@ -287,8 +287,9 @@ install_ind_comms_sdk() {
         # Remove version value from MCU + SDK installation path
         pushd ${install_dir}
         mv ind_comms_sdk_${platform}_${version_underscore} ind_comms_sdk 1>/dev/null
-        rm -rf ind_comms_sdk/mcu_plus_sdk 1>/dev/null
-        cd ind_comms_sdk 1>/dev/null
+        popd
+        pushd ${install_dir}/ind_comms_sdk 1>/dev/null
+        rm -rf mcu_plus_sdk 1>/dev/null
         ln -s ../mcu_plus_sdk mcu_plus_sdk 1>/dev/null
         popd
         #Clean-up

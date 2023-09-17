@@ -299,19 +299,6 @@ install_ind_comms_sdk() {
     echo
 }
 
-install_rtlibs() {
-    echo " Generating RTLibs..."
-	pushd ${install_dir}/rtlibs
-    chmod +x ${rtlibs_script_file}
-	python ${rtlibs_script_file}
-	cp -rf ${install_dir}/rtlibs/${rtlibs_generated_folder}/* ${install_dir}/motor_control_sdk
-    popd
-    #Clean-up
-    rm ${install_dir}/rtlibs 1>/dev/null
-    echo "RTLibs Done ..."
-    echo
-}
-
 #
 # This function is used to replace the tag/reference in a repo manifest file
 #

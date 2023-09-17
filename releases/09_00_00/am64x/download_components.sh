@@ -90,7 +90,6 @@ else
     install_syscfg  ${SYSCFG_VERSION} ${install_dir}
     install_mcu_plus_sdk  ${mcu_sdk_version} ${platform} ${motor_control_folder} ${mcu_plus_sdk_url}
     install_ind_comms_sdk  ${ind_comms_sdk_version} ${platform} ${motor_control_folder} ${ind_comms_sdk_url}
-	install_rtlibs ${rtlibs_script_file} ${rtlibs_generated_folder}
     if [ "$skip_nodejs" == "false" ]; then
         install_nodejs  ${NODEJS_VERSION} ${motor_control_folder}
     fi

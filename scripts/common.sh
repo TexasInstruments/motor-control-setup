@@ -287,27 +287,15 @@ install_ind_comms_sdk() {
         # Remove version value from MCU + SDK installation path
         pushd ${install_dir}
         mv ind_comms_sdk_${platform}_${version_underscore} ind_comms_sdk 1>/dev/null
-        rm -rf ind_comms_sdk/mcu_plus_sdk 1>/dev/null
-        cd ind_comms_sdk 1>/dev/null
+        popd
+        pushd ${install_dir}/ind_comms_sdk 1>/dev/null
+        rm -rf mcu_plus_sdk 1>/dev/null
         ln -s ../mcu_plus_sdk mcu_plus_sdk 1>/dev/null
         popd
         #Clean-up
         rm ${ind_comms_sdk_download_file} 1>/dev/null
         echo "[ ind_comms_sdk_${platform}_${version_underscore} ]  Done ..."
     fi
-    echo
-}
-
-install_rtlibs() {
-    echo " Generating RTLibs..."
-	pushd ${install_dir}/rtlibs
-    chmod +x ${rtlibs_script_file}
-	python ${rtlibs_script_file}
-	cp -rf ${install_dir}/rtlibs/${rtlibs_generated_folder}/* ${install_dir}/motor_control_sdk
-    popd
-    #Clean-up
-    rm ${install_dir}/rtlibs 1>/dev/null
-    echo "RTLibs Done ..."
     echo
 }
 

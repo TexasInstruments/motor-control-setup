@@ -29,6 +29,10 @@ case $key in
     skip_doxygen="${1#*=}"
     shift # past argument
     ;;
+    --skip_ccs=*)
+    skip_ccs="${1#*=}"
+    shift # past argument
+    ;;
     -h|--help)
     echo Usage: $0 [options]
     echo
@@ -70,16 +74,14 @@ ind_comms_sdk_version="${IND_COMMS_SDK_AM263X}"
 
 platform="am263x"
 
-# RTLibs
-rtlibs_script_file="sitara-mcsdk-release.py"
-rtlibs_generated_folder="temp_sitara_mcsdk"
-
 if [ "${OS}" = "Windows_NT" ]; then
     echo "Installing windows packages"
     #TODO
 else
-    install_ccs     ${CCS_VERSION} ${install_dir}
-    #install_clang   ${CGT_TI_ARM_CLANG_VERSION} ${clang_url_folder} ${clang_install_folder} ${clang_install_file} ${install_dir}
+    if [ "$skip_ccs" == "false" ]; then
+        install_ccs     ${CCS_VERSION} ${install_dir}
+    fi
+    install_clang   ${CGT_TI_ARM_CLANG_VERSION} ${clang_url_folder} ${clang_install_folder} ${clang_install_file} ${install_dir}
     install_syscfg  ${SYSCFG_VERSION} ${install_dir}
     install_mcu_plus_sdk  ${mcu_sdk_version} ${platform} ${motor_control_folder} ${mcu_plus_sdk_url}
     install_ind_comms_sdk  ${ind_comms_sdk_version} ${platform} ${motor_control_folder} ${ind_comms_sdk_url}

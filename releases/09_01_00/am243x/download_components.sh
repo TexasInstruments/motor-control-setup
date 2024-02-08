@@ -29,6 +29,10 @@ case $key in
     skip_doxygen="${1#*=}"
     shift # past argument
     ;;
+    --skip_ccs=*)
+    skip_ccs="${1#*=}"
+    shift # past argument
+    ;;
     -h|--help)
     echo Usage: $0 [options]
     echo
@@ -46,13 +50,14 @@ COMPONENT_DIR=${BASE_DIR}/../..
 : ${install_dir:="${HOME}/ti"}
 : ${skip_nodejs:="false"}
 : ${skip_doxygen:="false"}
+: ${skip_ccs:="false"}
 
 #Source common component versions
 source ${THIS_DIR}/../.component_versions
 source ${BASE_DIR}/scripts/common.sh
 
 gcc_arm_install_folder="gcc-arm-none-eabi-${GCC_ARM_VERSION}"
-gcc_arm_download_file="gcc-arm-none-eabi-${GCC_ARM_VERSION}-linux.tar.bz2"
+gcc_arm_download_file="gcc-arm-none-eabi-${GCC_ARM_VERSION}-x86_64-linux.tar.bz2"
 
 if [ "$install_win_package_on_linux" == "true" ]; then
     echo "Installing windows packages on linux machine...."
@@ -73,17 +78,14 @@ ind_comms_sdk_version="${IND_COMMS_SDK_AM243X}"
 
 platform="am243x"
 
-
-# RTLibs
-rtlibs_script_file="sitara-mcsdk-release.py"
-rtlibs_generated_folder="temp_sitara_mcsdk"
-
 if [ "${OS}" = "Windows_NT" ]; then
     echo "Installing windows packages"
     #TODO
 else
-    install_ccs     ${CCS_VERSION} ${install_dir}
-    #install_clang   ${CGT_TI_ARM_CLANG_VERSION} ${clang_url_folder} ${clang_install_folder} ${clang_install_file} ${install_dir}
+    if [ "$skip_ccs" == "false" ]; then
+        install_ccs     ${CCS_VERSION} ${install_dir}
+    fi
+    install_clang   ${CGT_TI_ARM_CLANG_VERSION} ${clang_url_folder} ${clang_install_folder} ${clang_install_file} ${install_dir}
     install_gcc_arm ${GCC_ARM_VERSION} ${gcc_arm_install_folder} ${gcc_arm_download_file} ${install_dir} ${GCC_ARM_VERSION_FOLDER}
     install_syscfg  ${SYSCFG_VERSION} ${install_dir}
     install_mcu_plus_sdk  ${mcu_sdk_version} ${platform} ${motor_control_folder} ${mcu_plus_sdk_url}

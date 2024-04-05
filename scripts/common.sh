@@ -38,6 +38,12 @@ install_ccs() {
 
     local ccs_untar_folder=`echo ${ccs_install_file} | sed -e "s|\.tar\.gz||g"`
 
+    if [ "${ccs_version}" == "12.7.0.00006" ];
+    then
+        ccs_install_file="CCS12.7.0.00006-sysconf-1_linux-x64.tar.gz"
+        ccs_url="http://sdopebuilds.toro.design.ti.com/CCS12.7.0/linux-x64/nightly/builds/CCS12.7.0.00006-sysconf-1/CCS12.7.0.00006-sysconf-1_linux-x64.tar.gz"
+    fi
+
     echo "[ccs $1] Checking ..."
     if [ ! -d "${install_dir}/${ccs_folder}" ]
     then

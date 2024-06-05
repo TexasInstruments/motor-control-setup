@@ -73,7 +73,7 @@ mcu_plus_sdk_url="${MCU_PLUS_SDK_AM243X_RELEASE_URL}"
 mcu_sdk_version="${MCU_PLUS_SDK_AM243X}"
 
 # IND COMMS SDK
-ind_comms_sdk_url="${IND_COMMS_SDK_AM243X_RELEASE_URL}"
+ind_comms_sdk_url="${IND_COMMS_SDK_AM243X_RC_URL}"
 ind_comms_sdk_version="${IND_COMMS_SDK_AM243X}"
 
 platform="am243x"

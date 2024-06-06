@@ -46,7 +46,7 @@ MCU_PLUS_SDK_AM263X_RELEASE_URL="https://dr-download.ti.com/software-development
 #INDUSTRIAK COMMUNICATIONS SDK VERSION
 IND_COMMS_SDK_AM64X="09.02.00.08"
 IND_COMMS_SDK_AM243X="09.02.00.08"
-IND_COMMS_SDK_AM263X="09.02.00.01"
+IND_COMMS_SDK_AM263X="09.02.00.12"
 
 #INDUSTRIAL COMMUNICATIONS SDK NIGHTLY URL
 IND_COMMS_SDK_AM64X_NIGHTLY_URL="http://pruicss-nas.dhcp.ti.com/nightly_builds/ind_comms_sdk_am64x_nightly/latest/artifacts/output/webgen/exports"

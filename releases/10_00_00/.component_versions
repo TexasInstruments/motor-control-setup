@@ -63,4 +63,4 @@ IND_COMMS_SDK_AM261X_RC_URL="http://tigt_qa.dal.englab.ti.com/qacm/test_area/IND
 IND_COMMS_SDK_AM243X_RELEASE_URL="https://dr-download.ti.com/secure/software-development/software-development-kit-sdk/MD-HPWKAC6ucZ/${IND_COMMS_SDK_AM243X}"
 IND_COMMS_SDK_AM263X_RELEASE_URL="https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-OicXcDAQjD/${IND_COMMS_SDK_AM263X}"
 #FIXME(PINDSW-8205): The correct ICSDK release URL needs to be updated below for AM261x
-IND_COMMS_SDK_AM261X_RELEASE_URL="https://dr-download.ti.com/secure/software-development/software-development-kit-sdk/MD-FYaEA1EGYT/${IND_COMMS_SDK_AM261X}"
+IND_COMMS_SDK_AM261X_RELEASE_URL="http://pruicss-nas.dhcp.ti.com/release_builds/INDUSTRIAL-COMMUNICATIONS-SDK/10.00.00/am261x/pruicss-nas.dhcp.ti.com/artifacts/output/webgen/exports/"

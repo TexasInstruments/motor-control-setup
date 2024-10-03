@@ -69,7 +69,7 @@ mcu_plus_sdk_url=${MCU_PLUS_SDK_AM261X_RELEASE_URL}
 mcu_sdk_version="${MCU_PLUS_SDK_AM261X}"
 
 # IND COMMS SDK
-ind_comms_sdk_url="${IND_COMMS_SDK_AM261X_NIGHTLY_URL}"
+ind_comms_sdk_url="${IND_COMMS_SDK_AM261X_RELEASE_URL}"
 ind_comms_sdk_version="${IND_COMMS_SDK_AM261X}"
 
 platform="am261x"

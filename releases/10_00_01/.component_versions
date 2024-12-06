@@ -21,7 +21,7 @@ DSPLIB_VERSION="3_4_0_0"
 #MCU PLUS SDK VERSION
 MCU_PLUS_SDK_AM243X="10.00.01.00"
 MCU_PLUS_SDK_AM263X="10.00.01.00"
-MCU_PLUS_SDK_AM261X="10.00.01.03"
+MCU_PLUS_SDK_AM261X="10.00.01.06"
 
 #MCU PLUS SDK NIGHTLY URL
 MCU_PLUS_SDK_AM243X_NIGHTLY_URL="http://mcupnas.dhcp.ti.com/release_area/nightly_builds/mcu_plus_sdk_am243x_nightly/latest/artifacts/output/webgen/exports"
@@ -42,7 +42,7 @@ MCU_PLUS_SDK_AM261X_RC_URL="http://tigt_qa.dal.englab.ti.com/qacm/test_area/MCU_
 MCU_PLUS_SDK_AM243X_RELEASE_URL="https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-ouHbHEm1PK/${MCU_PLUS_SDK_AM243X}"
 MCU_PLUS_SDK_AM263X_RELEASE_URL="https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-r5FY9rRaGv/${MCU_PLUS_SDK_AM263X}"
 #FIXME(PINDSW-8205): The correct MCU+ SDK release URL needs to be updated below for AM261x
-MCU_PLUS_SDK_AM261X_RELEASE_URL="http://mcupnas.dhcp.ti.com/release_area/nightly_builds/mcu_plus_sdk_am261x/134-2024-11-12_05-06-21/artifacts/output/webgen/exports/"
+MCU_PLUS_SDK_AM261X_RELEASE_URL="http://mcupnas.dhcp.ti.com/release_area/nightly_builds/mcu_plus_sdk_am261x/165-2024-12-04_23-00-38/artifacts/output/webgen/exports/"
 
 #INDUSTRIAL COMMUNICATIONS SDK VERSION
 IND_COMMS_SDK_AM243X="10.00.00.01"

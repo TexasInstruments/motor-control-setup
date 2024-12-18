@@ -47,7 +47,7 @@ MCU_PLUS_SDK_AM261X_RELEASE_URL="http://mcupnas.dhcp.ti.com/release_area/nightly
 #INDUSTRIAL COMMUNICATIONS SDK VERSION
 IND_COMMS_SDK_AM243X="10.00.00.01"
 IND_COMMS_SDK_AM263X="10.00.00.01"
-IND_COMMS_SDK_AM261X="10.00.00.01"
+IND_COMMS_SDK_AM261X="10.00.01.02"
 
 #INDUSTRIAL COMMUNICATIONS SDK NIGHTLY URL
 IND_COMMS_SDK_AM243X_NIGHTLY_URL="http://pruicss-nas.dhcp.ti.com/nightly_builds/ind_comms_sdk_am243x_nightly/latest/artifacts/output/webgen/exports"
@@ -63,4 +63,4 @@ IND_COMMS_SDK_AM261X_RC_URL="http://tigt_qa.dal.englab.ti.com/qacm/test_area/IND
 IND_COMMS_SDK_AM243X_RELEASE_URL="https://dr-download.ti.com/secure/software-development/software-development-kit-sdk/MD-HPWKAC6ucZ/${IND_COMMS_SDK_AM243X}"
 IND_COMMS_SDK_AM263X_RELEASE_URL="https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-OicXcDAQjD/${IND_COMMS_SDK_AM263X}"
 #FIXME(PINDSW-8205): The correct ICSDK release URL needs to be updated below for AM261x
-IND_COMMS_SDK_AM261X_RELEASE_URL="http://pruicss-nas.dhcp.ti.com/release_builds/INDUSTRIAL-COMMUNICATIONS-SDK/10.00.00/am261x/pruicss-nas.dhcp.ti.com/artifacts/output/webgen/exports/"
+IND_COMMS_SDK_AM261X_RELEASE_URL="http://pruicss-nas.dhcp.ti.com/nightly_builds/ind_comms_sdk_am261x/67-2024-12-14_03-41-42/artifacts/output/webgen/exports/"

@@ -19,48 +19,53 @@ GCC_ARM_VERSION_FOLDER="7-2017q4"
 DSPLIB_VERSION="3_4_0_0"
 
 #MCU PLUS SDK VERSION
-MCU_PLUS_SDK_AM243X="10.00.00.01"
-MCU_PLUS_SDK_AM263X="10.00.00.01"
+MCU_PLUS_SDK_AM243X="10.00.00.20"
+MCU_PLUS_SDK_AM263X="10.00.00.35"
+MCU_PLUS_SDK_AM263PX="10.00.00.35"
 MCU_PLUS_SDK_AM261X="10.00.00.37"
 
 #MCU PLUS SDK NIGHTLY URL
 MCU_PLUS_SDK_AM243X_NIGHTLY_URL="http://mcupnas.dhcp.ti.com/release_area/nightly_builds/mcu_plus_sdk_am243x_nightly/latest/artifacts/output/webgen/exports"
 MCU_PLUS_SDK_AM263X_NIGHTLY_URL="http://mcupnas.dhcp.ti.com/release_area/nightly_builds/mcu_plus_sdk_am263x_nightly/latest/artifacts/output/webgen/exports"
+MCU_PLUS_SDK_AM263PX_NIGHTLY_URL="http://mcupnas.dhcp.ti.com/release_area/nightly_builds/mcu_plus_sdk_am263px_nightly/latest/artifacts/output/webgen/exports"
 MCU_PLUS_SDK_AM261X_NIGHTLY_URL="http://mcupnas.dhcp.ti.com/release_area/nightly_builds/mcu_plus_sdk_am261x_nightly/latest/artifacts/output/webgen/exports"
 
-#MCU PLUS SDK RC VERSION
-MCU_PLUS_SDK_RC_AM243X="10.00.00.01"
-MCU_PLUS_SDK_RC_AM263X="10.00.00.01"
-MCU_PLUS_SDK_RC_AM261X="10.00.00.01"
-
 #MCU PLUS SDK RC URL
-MCU_PLUS_SDK_AM243X_RC_URL="http://tigt_qa.dal.englab.ti.com/qacm/test_area/MCU_PLUS_SDK/${MCU_PLUS_SDK_RC_AM243X::8}/am243x/${MCU_PLUS_SDK_RC_AM243X//\./_}/exports"
-MCU_PLUS_SDK_AM263X_RC_URL="http://tigt_qa.dal.englab.ti.com/qacm/test_area/MCU_PLUS_SDK/${MCU_PLUS_SDK_RC_AM263X::8}/am263x/${MCU_PLUS_SDK_RC_AM263X//\./_}/exports"
-MCU_PLUS_SDK_AM261X_RC_URL="http://tigt_qa.dal.englab.ti.com/qacm/test_area/MCU_PLUS_SDK/${MCU_PLUS_SDK_RC_AM261X::8}/am261x/${MCU_PLUS_SDK_RC_AM261X//\./_}/exports"
+MCU_PLUS_SDK_AM243X_RC_URL="http://tigt_qa.dal.englab.ti.com/qacm/test_area/MCU_PLUS_SDK/${MCU_PLUS_SDK_AM243X:8}/am243x"
+MCU_PLUS_SDK_AM263X_RC_URL="http://tigt_qa.dal.englab.ti.com/qacm/test_area/MCU_PLUS_SDK/${MCU_PLUS_SDK_AM263X:8}/am263x"
+MCU_PLUS_SDK_AM263PX_RC_URL="http://tigt_qa.dal.englab.ti.com/qacm/test_area/MCU_PLUS_SDK/${MCU_PLUS_SDK_AM263PX:8}/am263px"
+MCU_PLUS_SDK_AM261X_RC_URL="http://tigt_qa.dal.englab.ti.com/qacm/test_area/MCU_PLUS_SDK/${MCU_PLUS_SDK_AM263X:8}/am261x"
 
 #MCU PLUS SDK RELEASE URL
 MCU_PLUS_SDK_AM243X_RELEASE_URL="https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-ouHbHEm1PK/${MCU_PLUS_SDK_AM243X}"
 MCU_PLUS_SDK_AM263X_RELEASE_URL="https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-r5FY9rRaGv/${MCU_PLUS_SDK_AM263X}"
+MCU_PLUS_SDK_AM263PX_RELEASE_URL="https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-JVtW1V4WfA/${MCU_PLUS_SDK_AM263PX}"
 #FIXME(PINDSW-8205): The correct MCU+ SDK release URL needs to be updated below for AM261x
 MCU_PLUS_SDK_AM261X_RELEASE_URL="http://mcupnas.dhcp.ti.com/release_area/nightly_builds/mcu_plus_sdk_am261x/62-2024-09-25_06-12-56/artifacts/output/webgen/exports"
 
 #INDUSTRIAL COMMUNICATIONS SDK VERSION
 IND_COMMS_SDK_AM243X="10.00.00.01"
-IND_COMMS_SDK_AM263X="10.00.00.01"
+IND_COMMS_SDK_AM263X="10.00.00.09"
+IND_COMMS_SDK_AM263PX="10.00.00.09"
 IND_COMMS_SDK_AM261X="10.00.00.01"
 
 #INDUSTRIAL COMMUNICATIONS SDK NIGHTLY URL
 IND_COMMS_SDK_AM243X_NIGHTLY_URL="http://pruicss-nas.dhcp.ti.com/nightly_builds/ind_comms_sdk_am243x_nightly/latest/artifacts/output/webgen/exports"
 IND_COMMS_SDK_AM263X_NIGHTLY_URL="http://pruicss-nas.dhcp.ti.com/nightly_builds/ind_comms_sdk_am263x_nightly/latest/artifacts/output/webgen/exports"
+IND_COMMS_SDK_AM263PX_NIGHTLY_URL="http://pruicss-nas.dhcp.ti.com/nightly_builds/ind_comms_sdk_am263px_nightly/latest/artifacts/output/webgen/exports"
 IND_COMMS_SDK_AM261X_NIGHTLY_URL="http://pruicss-nas.dhcp.ti.com/nightly_builds/ind_comms_sdk_am261x_nightly/latest/artifacts/output/webgen/exports"
 
 #INDUSTRIAL COMMUNICATIONS SDK RC URL
 IND_COMMS_SDK_AM243X_RC_URL="http://tigt_qa.dal.englab.ti.com/qacm/test_area/INDUSTRIAL-COMMUNICATIONS-SDK/${IND_COMMS_SDK_AM243X::8}/am243x/${IND_COMMS_SDK_AM243X//\./_}/artifacts/output/webgen/exports"
 IND_COMMS_SDK_AM263X_RC_URL="http://tigt_qa.dal.englab.ti.com/qacm/test_area/INDUSTRIAL-COMMUNICATIONS-SDK/${IND_COMMS_SDK_AM263X::8}/am263x/${IND_COMMS_SDK_AM263X//\./_}/artifacts/output/webgen/exports"
+IND_COMMS_SDK_AM263PX_RC_URL="http://tigt_qa.dal.englab.ti.com/qacm/test_area/INDUSTRIAL-COMMUNICATIONS-SDK/${IND_COMMS_SDK_AM263PX::8}/am263px/${IND_COMMS_SDK_AM263PX//\./_}/artifacts/output/webgen/exports"
 IND_COMMS_SDK_AM261X_RC_URL="http://tigt_qa.dal.englab.ti.com/qacm/test_area/INDUSTRIAL-COMMUNICATIONS-SDK/${IND_COMMS_SDK_AM261X::8}/am261x/${IND_COMMS_SDK_AM261X//\./_}/artifacts/output/webgen/exports"
 
 #INDUSTRIAL COMMUNICATIONS SDK RELEASE URL
 IND_COMMS_SDK_AM243X_RELEASE_URL="https://dr-download.ti.com/secure/software-development/software-development-kit-sdk/MD-HPWKAC6ucZ/${IND_COMMS_SDK_AM243X}"
-IND_COMMS_SDK_AM263X_RELEASE_URL="https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-OicXcDAQjD/${IND_COMMS_SDK_AM263X}"
+#FIXME(PINDSW-8370): The correct ICSDK release URL needs to be updated below for AM263x
+IND_COMMS_SDK_AM263X_RELEASE_URL="http://pruicss-nas.dhcp.ti.com/release_builds/INDUSTRIAL-COMMUNICATIONS-SDK/10.00.00/am263x/pruicss-nas.dhcp.ti.com/artifacts/output/webgen/exports/"
+#FIXME(PINDSW-8370): The correct ICSDK release URL needs to be updated below for AM263Px
+IND_COMMS_SDK_AM263PX_RELEASE_URL="http://pruicss-nas.dhcp.ti.com/release_builds/INDUSTRIAL-COMMUNICATIONS-SDK/10.00.00/am263px/pruicss-nas.dhcp.ti.com/artifacts/output/webgen/exports/"
 #FIXME(PINDSW-8205): The correct ICSDK release URL needs to be updated below for AM261x
 IND_COMMS_SDK_AM261X_RELEASE_URL="http://pruicss-nas.dhcp.ti.com/release_builds/INDUSTRIAL-COMMUNICATIONS-SDK/10.00.00/am261x/pruicss-nas.dhcp.ti.com/artifacts/output/webgen/exports/"

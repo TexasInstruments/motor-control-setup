@@ -65,11 +65,11 @@ clang_install_folder="ti-cgt-armllvm_${CGT_TI_ARM_CLANG_VERSION}.${CGT_TI_ARM_CL
 clang_install_file="ti_cgt_armllvm_${CGT_TI_ARM_CLANG_VERSION}.${CGT_TI_ARM_CLANG_VERSION_SUFFIX}_linux-x64_installer.bin"
 
 # MCU + SDK
-mcu_plus_sdk_url=${MCU_PLUS_SDK_AM263PX_RC_URL}
+mcu_plus_sdk_url=${MCU_PLUS_SDK_AM263PX_RELEASE_URL}
 mcu_sdk_version="${MCU_PLUS_SDK_AM263PX}"
 
 # IND COMMS SDK
-ind_comms_sdk_url="${IND_COMMS_SDK_AM263PX_RC_URL}"
+ind_comms_sdk_url="${IND_COMMS_SDK_AM263PX_RELEASE_URL}"
 ind_comms_sdk_version="${IND_COMMS_SDK_AM263PX}"
 
 platform="am263px"

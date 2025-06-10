@@ -60,7 +60,7 @@ MCU_PLUS_SDK_AM261X_RELEASE_URL="https://dr-download.ti.com/software-development
 IND_COMMS_SDK_AM243X="10.02.00.01"
 IND_COMMS_SDK_AM263X="10.02.00.01"
 IND_COMMS_SDK_AM263PX="10.02.00.01"
-IND_COMMS_SDK_AM261X="10.02.00.09"
+IND_COMMS_SDK_AM261X="10.02.00.10"
 
 #INDUSTRIAL COMMUNICATIONS SDK NIGHTLY URL
 # Needs to be updated
@@ -74,7 +74,7 @@ IND_COMMS_SDK_AM261X_NIGHTLY_URL="http://pruicss-nas.dhcp.ti.com/nightly_builds/
 IND_COMMS_SDK_AM243X_RC_URL="http://tigt_qa.dal.englab.ti.com/qacm/test_area/INDUSTRIAL-COMMUNICATIONS-SDK/${IND_COMMS_SDK_AM243X::8}/am243x/${IND_COMMS_SDK_AM243X//\./_}/artifacts/output/webgen/exports"
 IND_COMMS_SDK_AM263X_RC_URL="http://tigt_qa.dal.englab.ti.com/qacm/test_area/INDUSTRIAL-COMMUNICATIONS-SDK/${IND_COMMS_SDK_AM263X::8}/am263x/${IND_COMMS_SDK_AM263X//\./_}/artifacts/output/webgen/exports"
 IND_COMMS_SDK_AM263PX_RC_URL="http://tigt_qa.dal.englab.ti.com/qacm/test_area/INDUSTRIAL-COMMUNICATIONS-SDK/${IND_COMMS_SDK_AM263PX::8}/am263px/${IND_COMMS_SDK_AM263PX//\./_}/artifacts/output/webgen/exports"
-IND_COMMS_SDK_AM261X_RC_URL="http://pruicss-nas.dhcp.ti.com/nightly_builds/ind_comms_sdk_am261x/153-2025-06-04_10-09-18/artifacts/output/webgen/exports/"
+IND_COMMS_SDK_AM261X_RC_URL="http://pruicss-nas.dhcp.ti.com/nightly_builds/ind_comms_sdk_am261x/155-2025-06-10_04-17-54/artifacts/output/webgen/exports/"
 
 #INDUSTRIAL COMMUNICATIONS SDK RELEASE URL
 # Needs to be updated

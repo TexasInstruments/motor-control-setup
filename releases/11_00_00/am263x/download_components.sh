@@ -56,17 +56,17 @@ COMPONENT_DIR=${BASE_DIR}/../..
 source ${THIS_DIR}/../.component_versions
 source ${BASE_DIR}/scripts/common.sh
 
-gcc_arm_install_folder="gcc-arm-none-eabi-${GCC_ARM_VERSION}"
-gcc_arm_download_file="gcc-arm-none-eabi-${GCC_ARM_VERSION}-x86_64-linux.tar.bz2"
+gcc_arm_install_folder="gcc-arm-none-eabi-${GCC_ARM_VERSION_AM263PX}"
+gcc_arm_download_file="gcc-arm-none-eabi-${GCC_ARM_VERSION_AM263PX}-x86_64-linux.tar.bz2"
 
 if [ "$install_win_package_on_linux" == "true" ]; then
     echo "Installing windows packages on linux machine...."
     #Nothing yet!!
 fi
 
-clang_url_folder="${CGT_TI_ARM_CLANG_VERSION}.${CGT_TI_ARM_CLANG_VERSION_SUFFIX}"
-clang_install_folder="ti-cgt-armllvm_${CGT_TI_ARM_CLANG_VERSION}.${CGT_TI_ARM_CLANG_VERSION_SUFFIX}"
-clang_install_file="ti_cgt_armllvm_${CGT_TI_ARM_CLANG_VERSION}.${CGT_TI_ARM_CLANG_VERSION_SUFFIX}_linux-x64_installer.bin"
+clang_url_folder="${CGT_TI_ARM_CLANG_VERSION_AM263PX}.${CGT_TI_ARM_CLANG_VERSION_SUFFIX}"
+clang_install_folder="ti-cgt-armllvm_${CGT_TI_ARM_CLANG_VERSION_AM263PX}.${CGT_TI_ARM_CLANG_VERSION_SUFFIX}"
+clang_install_file="ti_cgt_armllvm_${CGT_TI_ARM_CLANG_VERSION_AM263PX}.${CGT_TI_ARM_CLANG_VERSION_SUFFIX}_linux-x64_installer.bin"
 
 # MCU + SDK
 mcu_plus_sdk_url="${MCU_PLUS_SDK_AM263X_RELEASE_URL}"
@@ -83,11 +83,11 @@ if [ "${OS}" = "Windows_NT" ]; then
     #TODO
 else
     if [ "$skip_ccs" == "false" ]; then
-        install_ccs     ${CCS_VERSION} ${install_dir}
+        install_ccs     ${CCS_VERSION_AM263PX} ${install_dir}
     fi
-    install_clang   ${CGT_TI_ARM_CLANG_VERSION} ${clang_url_folder} ${clang_install_folder} ${clang_install_file} ${install_dir}
-    install_gcc_arm ${GCC_ARM_VERSION} ${gcc_arm_install_folder} ${gcc_arm_download_file} ${install_dir} ${GCC_ARM_VERSION_FOLDER}
-    install_syscfg  ${SYSCFG_VERSION} ${install_dir}
+    install_clang   ${CGT_TI_ARM_CLANG_VERSION_AM263PX} ${clang_url_folder} ${clang_install_folder} ${clang_install_file} ${install_dir}
+    install_gcc_arm ${GCC_ARM_VERSION_AM263PX} ${gcc_arm_install_folder} ${gcc_arm_download_file} ${install_dir} ${GCC_ARM_VERSION_FOLDER}
+    install_syscfg  ${SYSCFG_VERSION_AM263PX} ${install_dir}
     install_mcu_plus_sdk  ${mcu_sdk_version} ${platform} ${motor_control_folder} ${mcu_plus_sdk_url}
     install_ind_comms_sdk  ${ind_comms_sdk_version} ${platform} ${motor_control_folder} ${ind_comms_sdk_url}
     if [ "$skip_nodejs" == "false" ]; then
@@ -96,7 +96,7 @@ else
     if [ "$skip_doxygen" == "false" ]; then
         install_doxygen ${DOXYGEN_VERSION}
     fi
-    ccs_discover_tools  ${CCS_VERSION} ${install_dir}
+    ccs_discover_tools  ${CCS_VERSION_AM263PX} ${install_dir}
 fi
 
 #

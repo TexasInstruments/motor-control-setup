@@ -56,7 +56,7 @@ COMPONENT_DIR=${BASE_DIR}/../..
 source ${THIS_DIR}/../.component_versions
 source ${BASE_DIR}/scripts/common.sh
 
-gcc_arm_install_folder="gcc-arm-none-eabi-${GCC_ARM_VERSION_AM243X }"
+gcc_arm_install_folder="gcc-arm-none-eabi-${GCC_ARM_VERSION_AM243X}"
 gcc_arm_download_file="gcc-arm-none-eabi-${GCC_ARM_VERSION_AM243X}-x86_64-linux.tar.bz2"
 
 if [ "$install_win_package_on_linux" == "true" ]; then

@@ -73,7 +73,7 @@ IND_COMMS_SDK_AM261X_NIGHTLY_URL="http://pruicss-nas.dhcp.ti.com/nightly_builds/
 # Needs to be updated
 IND_COMMS_SDK_AM243X_RC_URL="http://tigt_qa.dal.englab.ti.com/qacm/test_area/INDUSTRIAL-COMMUNICATIONS-SDK/${IND_COMMS_SDK_AM243X::8}/am243x/${IND_COMMS_SDK_AM243X//\./_}/artifacts/output/webgen/exports"
 IND_COMMS_SDK_AM263X_RC_URL="http://tigt_qa.dal.englab.ti.com/qacm/test_area/INDUSTRIAL-COMMUNICATIONS-SDK/${IND_COMMS_SDK_AM263X::8}/am263x/${IND_COMMS_SDK_AM263X//\./_}/artifacts/output/webgen/exports"
-IND_COMMS_SDK_AM263PX_RC_URL="http://pruicss-nas.dhcp.ti.com/nightly_builds/ind_comms_sdk_am263px/489-2025-08-19_01-53-12/artifacts/output/webgen/exports/"
+IND_COMMS_SDK_AM263PX_RC_URL="http://pruicss-nas.dhcp.ti.com/release_builds/INDUSTRIAL-COMMUNICATIONS-SDK/10.02.00/10_02_00_22/am263px/pruicss-nas.dhcp.ti.com/artifacts/output/webgen/exports/"
 IND_COMMS_SDK_AM261X_RC_URL="http://pruicss-nas.dhcp.ti.com/release_builds/INDUSTRIAL-COMMUNICATIONS-SDK/10.02.00/10_02_00_17/am261x/pruicss-nas.dhcp.ti.com/artifacts/output/webgen/exports/"
 
 #INDUSTRIAL COMMUNICATIONS SDK RELEASE URL

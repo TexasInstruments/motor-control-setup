@@ -33,6 +33,10 @@ case $key in
     skip_ccs="${1#*=}"
     shift # past argument
     ;;
+    --package_type=*)
+    package_type="${1#*=}"
+    shift # past argument
+    ;;
     -h|--help)
     echo Usage: $0 [options]
     echo
@@ -51,6 +55,7 @@ COMPONENT_DIR=${BASE_DIR}/../..
 : ${skip_nodejs:="false"}
 : ${skip_doxygen:="false"}
 : ${skip_ccs:="false"}
+: ${package_type:="prod"}
 
 #Source common component versions
 source ${THIS_DIR}/../.component_versions
@@ -73,7 +78,7 @@ mcu_plus_sdk_url="${MCU_PLUS_SDK_AM243X_RELEASE_URL}"
 mcu_sdk_version="${MCU_PLUS_SDK_AM243X}"
 
 # IND COMMS SDK
-ind_comms_sdk_url="${IND_COMMS_SDK_AM243X_RELEASE_URL}"
+ind_comms_sdk_url="${IND_COMMS_SDK_AM243X_RC_URL}"
 ind_comms_sdk_version="${IND_COMMS_SDK_AM243X}"
 
 platform="am243x"
@@ -89,7 +94,7 @@ else
     install_gcc_arm ${GCC_ARM_VERSION_AM243X} ${gcc_arm_install_folder} ${gcc_arm_download_file} ${install_dir} ${GCC_ARM_VERSION_FOLDER}
     install_syscfg  ${SYSCFG_VERSION_AM243X} ${install_dir}
     install_mcu_plus_sdk  ${mcu_sdk_version} ${platform} ${motor_control_folder} ${mcu_plus_sdk_url}
-    install_ind_comms_sdk  ${ind_comms_sdk_version} ${platform} ${motor_control_folder} ${ind_comms_sdk_url}
+    install_ind_comms_sdk  ${ind_comms_sdk_version} ${platform} ${motor_control_folder} ${ind_comms_sdk_url} ${package_type}
     if [ "$skip_nodejs" == "false" ]; then
         install_nodejs  ${NODEJS_VERSION} ${motor_control_folder}
     fi

@@ -278,31 +278,54 @@ install_ind_comms_sdk() {
     local platform=$2
     local install_dir=$3
     local ind_comms_sdk_url=$4
+    local package_type=$5
     local version_underscore=`echo ${version} | sed -e "s|\.|_|g"`
-    local ind_comms_sdk_download_file="ind_comms_sdk_${platform}_${version_underscore}-linux-x64-installer.run"
+    local ind_comms_sdk_eval_download_file="ind_comms_sdk_${platform}_${version_underscore}_eval-linux-x64-installer.run"
+    local ind_comms_sdk_prod_download_file="ind_comms_sdk_${platform}_${version_underscore}_prod-linux-x64-installer.run"
 
-    echo "[ind_comms_sdk_${platform}_${version_underscore}] Checking ..."
-
-    if [ ! -d "${install_dir}"/ind_comms_sdk_${platform}_${version_underscore} ]
-    then
-        echo "[ ind_comms_sdk_${platform}_${version_underscore} ]  Downloading ..."
-        wget -q ${ind_comms_sdk_url}/${ind_comms_sdk_download_file} 1>/dev/null
-        chmod +x ${ind_comms_sdk_download_file}
-        echo "[ ind_comms_sdk_${platform}_${version_underscore} ]  Installing ..."
-        ./${ind_comms_sdk_download_file} --mode unattended --prefix ${install_dir}
-        # Remove version value from MCU + SDK installation path
-        pushd ${install_dir}
-        mv ind_comms_sdk_${platform}_${version_underscore} ind_comms_sdk 1>/dev/null
-        popd
-        pushd ${install_dir}/ind_comms_sdk 1>/dev/null
-        rm -rf mcu_plus_sdk 1>/dev/null
-        ln -s ../mcu_plus_sdk mcu_plus_sdk 1>/dev/null
-        popd
-        #Clean-up
-        rm ${ind_comms_sdk_download_file} 1>/dev/null
-        echo "[ ind_comms_sdk_${platform}_${version_underscore} ]  Done ..."
+    if [[ "${package_type}" == "prod" ]]; then
+    echo "[ind_comms_sdk_${platform}_${version_underscore}_prod] Checking ..."
+        if [ ! -d "${install_dir}"/ind_comms_sdk_${platform}_${version_underscore}_prod ]
+        then
+            echo "[ ind_comms_sdk_${platform}_${version_underscore}_prod ]  Downloading ..."
+            wget -q ${ind_comms_sdk_url}/${ind_comms_sdk_prod_download_file} 1>/dev/null
+            chmod +x ${ind_comms_sdk_prod_download_file}
+            echo "[ ind_comms_sdk_${platform}_${version_underscore}_prod ]  Installing ..."
+            ./${ind_comms_sdk_prod_download_file} --mode unattended --prefix ${install_dir}
+            # Remove version value from MCU + SDK installation path
+            pushd ${install_dir}
+            mv ind_comms_sdk_${platform}_${version_underscore} ind_comms_sdk 1>/dev/null
+            popd
+            pushd ${install_dir}/ind_comms_sdk 1>/dev/null
+            rm -rf mcu_plus_sdk 1>/dev/null
+            ln -s ../mcu_plus_sdk mcu_plus_sdk 1>/dev/null
+            popd
+            #Clean-up
+            rm ${ind_comms_sdk_prod_download_file} 1>/dev/null
+            echo "[ ind_comms_sdk_${platform}_${version_underscore}_prod ]  Done ..."
+        fi
+    else
+        echo "[ind_comms_sdk_${platform}_${version_underscore}_eval] Checking ..."
+        if [ ! -d "${install_dir}"/ind_comms_sdk_${platform}_${version_underscore}_eval ]
+        then
+            echo "[ ind_comms_sdk_${platform}_${version_underscore}_eval ]  Downloading ..."
+            wget -q ${ind_comms_sdk_url}/${ind_comms_sdk_eval_download_file} 1>/dev/null
+            chmod +x ${ind_comms_sdk_eval_download_file}
+            echo "[ ind_comms_sdk_${platform}_${version_underscore}_eval ]  Installing ..."
+            ./${ind_comms_sdk_eval_download_file} --mode unattended --prefix ${install_dir}
+            # Remove version value from MCU + SDK installation path
+            pushd ${install_dir}
+            mv ind_comms_sdk_${platform}_${version_underscore} ind_comms_sdk 1>/dev/null
+            popd
+            pushd ${install_dir}/ind_comms_sdk 1>/dev/null
+            rm -rf mcu_plus_sdk 1>/dev/null
+            ln -s ../mcu_plus_sdk mcu_plus_sdk 1>/dev/null
+            popd
+            #Clean-up
+            rm ${ind_comms_sdk_eval_download_file} 1>/dev/null
+            echo "[ ind_comms_sdk_${platform}_${version_underscore}_eval ]  Done ..."
+        fi
     fi
-    echo
 }
 
 #

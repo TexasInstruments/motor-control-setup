@@ -284,7 +284,7 @@ install_ind_comms_sdk() {
     local ind_comms_sdk_eval_download_file="ind_comms_sdk_${platform}_${version_underscore}_eval-linux-x64-installer.run"
     local ind_comms_sdk_prod_download_file="ind_comms_sdk_${platform}_${version_underscore}_prod-linux-x64-installer.run"
 
-    if [ "${product_family}" == "am243x" ]; then
+    if [ "${platform}" == "am243x" ]; then
         if [[ "${package_type}" == "prod" ]]; then
         echo "[ind_comms_sdk_${platform}_${version_underscore}_prod] Checking ..."
             if [ ! -d "${install_dir}"/ind_comms_sdk_${platform}_${version_underscore}_prod ]

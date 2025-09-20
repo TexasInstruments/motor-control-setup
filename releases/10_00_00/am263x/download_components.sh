@@ -50,16 +50,10 @@ COMPONENT_DIR=${BASE_DIR}/../..
 : ${install_dir:="${HOME}/ti"}
 : ${skip_nodejs:="false"}
 : ${skip_doxygen:="false"}
-: ${skip_ccs:="false"}
 
 #Source common component versions
 source ${THIS_DIR}/../.component_versions
 source ${BASE_DIR}/scripts/common.sh
-
-gcc_aarch64_install_folder="gcc-arm-${GCC_AARCH64_VERSION}-x86_64-aarch64-none-elf"
-gcc_aarch64_download_file="gcc-arm-${GCC_AARCH64_VERSION}-x86_64-aarch64-none-elf.tar.xz"
-gcc_arm_install_folder="gcc-arm-none-eabi-${GCC_ARM_VERSION}"
-gcc_arm_download_file="gcc-arm-none-eabi-${GCC_ARM_VERSION}-x86_64-linux.tar.bz2"
 
 if [ "$install_win_package_on_linux" == "true" ]; then
     echo "Installing windows packages on linux machine...."
@@ -71,14 +65,14 @@ clang_install_folder="ti-cgt-armllvm_${CGT_TI_ARM_CLANG_VERSION}.${CGT_TI_ARM_CL
 clang_install_file="ti_cgt_armllvm_${CGT_TI_ARM_CLANG_VERSION}.${CGT_TI_ARM_CLANG_VERSION_SUFFIX}_linux-x64_installer.bin"
 
 # MCU + SDK
-mcu_plus_sdk_url="${MCU_PLUS_SDK_AM64X_NIGHTLY_URL}"
-mcu_sdk_version="${MCU_PLUS_SDK_AM64X}"
+mcu_plus_sdk_url=${MCU_PLUS_SDK_AM263X_RELEASE_URL}
+mcu_sdk_version="${MCU_PLUS_SDK_AM263X}"
 
 # IND COMMS SDK
-ind_comms_sdk_url="${IND_COMMS_SDK_AM64X_NIGHTLY_URL}"
-ind_comms_sdk_version="${IND_COMMS_SDK_AM64X}"
+ind_comms_sdk_url="${IND_COMMS_SDK_AM263X_RELEASE_URL}"
+ind_comms_sdk_version="${IND_COMMS_SDK_AM263X}"
 
-platform="am64x"
+platform="am263x"
 
 if [ "${OS}" = "Windows_NT" ]; then
     echo "Installing windows packages"
@@ -88,8 +82,6 @@ else
         install_ccs     ${CCS_VERSION} ${install_dir}
     fi
     install_clang   ${CGT_TI_ARM_CLANG_VERSION} ${clang_url_folder} ${clang_install_folder} ${clang_install_file} ${install_dir}
-    install_gcc_aarch64 ${GCC_AARCH64_VERSION} ${gcc_aarch64_install_folder} ${gcc_aarch64_download_file} ${install_dir}
-    install_gcc_arm     ${GCC_ARM_VERSION}     ${gcc_arm_install_folder}     ${gcc_arm_download_file}     ${install_dir} ${GCC_ARM_VERSION_FOLDER}
     install_syscfg  ${SYSCFG_VERSION} ${install_dir}
     install_mcu_plus_sdk  ${mcu_sdk_version} ${platform} ${motor_control_folder} ${mcu_plus_sdk_url}
     install_ind_comms_sdk  ${ind_comms_sdk_version} ${platform} ${motor_control_folder} ${ind_comms_sdk_url}

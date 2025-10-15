@@ -56,9 +56,6 @@ COMPONENT_DIR=${BASE_DIR}/../..
 source ${THIS_DIR}/../.component_versions
 source ${BASE_DIR}/scripts/common.sh
 
-gcc_arm_install_folder="gcc-arm-none-eabi-${GCC_ARM_VERSION_AM243X}"
-gcc_arm_download_file="gcc-arm-none-eabi-${GCC_ARM_VERSION_AM243X}-x86_64-linux.tar.bz2"
-
 if [ "$install_win_package_on_linux" == "true" ]; then
     echo "Installing windows packages on linux machine...."
     #Nothing yet!!
@@ -67,6 +64,10 @@ fi
 clang_url_folder="${CGT_TI_ARM_CLANG_VERSION_AM243X}.${CGT_TI_ARM_CLANG_VERSION_SUFFIX}"
 clang_install_folder="ti-cgt-armllvm_${CGT_TI_ARM_CLANG_VERSION_AM243X}.${CGT_TI_ARM_CLANG_VERSION_SUFFIX}"
 clang_install_file="ti_cgt_armllvm_${CGT_TI_ARM_CLANG_VERSION_AM243X}.${CGT_TI_ARM_CLANG_VERSION_SUFFIX}_linux-x64_installer.bin"
+
+ti_cgt_pru_url_folder="${CGT_TI_PRU_VERSION}"
+ti_cgt_pru_install_folder="ti-cgt-pru_${CGT_TI_PRU_VERSION}"
+ti_cgt_pru_install_file="ti_cgt_pru_${CGT_TI_PRU_VERSION}_linux_installer_x86.bin"
 
 # MCU + SDK
 mcu_plus_sdk_url="${MCU_PLUS_SDK_AM243X_RELEASE_URL}"
@@ -83,19 +84,20 @@ if [ "${OS}" = "Windows_NT" ]; then
     #TODO
 else
     if [ "$skip_ccs" == "false" ]; then
-        install_ccs     ${CCS_VERSION_AM243X} ${install_dir}
+        install_ccs         ${CCS_VERSION_AM243X} ${install_dir}
     fi
-    install_clang   ${CGT_TI_ARM_CLANG_VERSION_AM243X} ${clang_url_folder} ${clang_install_folder} ${clang_install_file} ${install_dir}
-    install_syscfg  ${SYSCFG_VERSION_AM243X} ${install_dir}
-    install_mcu_plus_sdk  ${mcu_sdk_version} ${platform} ${motor_control_folder} ${mcu_plus_sdk_url}
-    install_ind_comms_sdk  ${ind_comms_sdk_version} ${platform} ${motor_control_folder} ${ind_comms_sdk_url}
+    install_clang           ${CGT_TI_ARM_CLANG_VERSION_AM243X} ${clang_url_folder} ${clang_install_folder} ${clang_install_file} ${install_dir}
+    install_ti_cgt_pru      ${CGT_TI_PRU_VERSION} ${ti_cgt_pru_url_folder} ${ti_cgt_pru_install_folder} ${ti_cgt_pru_install_file} ${install_dir}
+    install_syscfg          ${SYSCFG_VERSION_AM243X} ${install_dir}
+    install_mcu_plus_sdk    ${mcu_sdk_version} ${platform} ${motor_control_folder} ${mcu_plus_sdk_url}
+    install_ind_comms_sdk   ${ind_comms_sdk_version} ${platform} ${motor_control_folder} ${ind_comms_sdk_url}
     if [ "$skip_nodejs" == "false" ]; then
-        install_nodejs  ${NODEJS_VERSION} ${motor_control_folder}
+        install_nodejs      ${NODEJS_VERSION} ${motor_control_folder}
     fi
     if [ "$skip_doxygen" == "false" ]; then
-        install_doxygen ${DOXYGEN_VERSION}
+        install_doxygen     ${DOXYGEN_VERSION}
     fi
-    ccs_discover_tools  ${CCS_VERSION_AM243X} ${install_dir}
+    ccs_discover_tools      ${CCS_VERSION_AM243X} ${install_dir}
 fi
 
 #

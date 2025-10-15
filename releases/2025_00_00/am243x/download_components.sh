@@ -69,9 +69,9 @@ if [ "$install_win_package_on_linux" == "true" ]; then
     #Nothing yet!!
 fi
 
-clang_url_folder="${CGT_TI_ARM_CLANG_VERSION_AM243X}.${CGT_TI_ARM_CLANG_VERSION_SUFFIX_AM243X}"
-clang_install_folder="ti-cgt-armllvm_${CGT_TI_ARM_CLANG_VERSION_AM243X}.${CGT_TI_ARM_CLANG_VERSION_SUFFIX_AM243X}"
-clang_install_file="ti_cgt_armllvm_${CGT_TI_ARM_CLANG_VERSION_AM243X}.${CGT_TI_ARM_CLANG_VERSION_SUFFIX_AM243X}_linux-x64_installer.bin"
+clang_url_folder="${CGT_TI_ARM_CLANG_VERSION_AM243X}.${CGT_TI_ARM_CLANG_VERSION_SUFFIX}"
+clang_install_folder="ti-cgt-armllvm_${CGT_TI_ARM_CLANG_VERSION_AM243X}.${CGT_TI_ARM_CLANG_VERSION_SUFFIX}"
+clang_install_file="ti_cgt_armllvm_${CGT_TI_ARM_CLANG_VERSION_AM243X}.${CGT_TI_ARM_CLANG_VERSION_SUFFIX}_linux-x64_installer.bin"
 
 # MCU + SDK
 mcu_plus_sdk_url="${MCU_PLUS_SDK_AM243X_RELEASE_URL}"
@@ -91,7 +91,6 @@ else
         install_ccs     ${CCS_VERSION_AM243X} ${install_dir}
     fi
     install_clang   ${CGT_TI_ARM_CLANG_VERSION_AM243X} ${clang_url_folder} ${clang_install_folder} ${clang_install_file} ${install_dir}
-    install_gcc_arm ${GCC_ARM_VERSION_AM243X} ${gcc_arm_install_folder} ${gcc_arm_download_file} ${install_dir} ${GCC_ARM_VERSION_FOLDER}
     install_syscfg  ${SYSCFG_VERSION_AM243X} ${install_dir}
     install_mcu_plus_sdk  ${mcu_sdk_version} ${platform} ${motor_control_folder} ${mcu_plus_sdk_url}
     install_ind_comms_sdk  ${ind_comms_sdk_version} ${platform} ${motor_control_folder} ${ind_comms_sdk_url} ${package_type}

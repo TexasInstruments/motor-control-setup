@@ -89,8 +89,8 @@ else
     install_clang           ${CGT_TI_ARM_CLANG_VERSION_AM263PX} ${clang_url_folder} ${clang_install_folder} ${clang_install_file} ${install_dir}
     install_ti_cgt_pru      ${CGT_TI_PRU_VERSION} ${ti_cgt_pru_url_folder} ${ti_cgt_pru_install_folder} ${ti_cgt_pru_install_file} ${install_dir}
     install_syscfg          ${SYSCFG_VERSION_AM263PX} ${install_dir}
-    install_mcu_plus_sdk    ${mcu_sdk_version} ${platform} ${motor_control_folder} ${mcu_plus_sdk_url}
-    install_ind_comms_sdk   ${ind_comms_sdk_version} ${platform} ${motor_control_folder} ${ind_comms_sdk_url}
+    install_mcu_plus_sdk    ${mcu_sdk_version} ${platform} ${install_dir} ${mcu_plus_sdk_url}
+    install_ind_comms_sdk   ${ind_comms_sdk_version} ${platform} ${install_dir} ${ind_comms_sdk_url}
     if [ "$skip_nodejs" == "false" ]; then
         install_nodejs      ${NODEJS_VERSION} ${motor_control_folder}
     fi

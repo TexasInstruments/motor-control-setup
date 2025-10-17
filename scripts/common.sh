@@ -80,7 +80,7 @@ install_nodejs() {
     local motor_control_folder=$2
     local nvm_pass=1
 
-    echo "[nodejs ${version}] Installing ..."
+    echo "[nodejs ${version}] Checking ..."
 
     # Check for possible node folders
     if [ ! -d ~/.nvm/versions/node/v${version} ] &&  [ ! -d ~/node-v${version} ] && ! command -v node &> /dev/null; then
@@ -128,8 +128,7 @@ install_nodejs() {
     if [ ! -d ${motor_control_folder}/node_modules ]; then
         echo "[nodejs packages] Installing required nodejs packages ..."
         cd ${motor_control_folder}
-        npm install lodash
-        npm install yargs
+        npm ci
         cd - 1>/dev/null
         echo "[nodejs packages] Done "
     fi

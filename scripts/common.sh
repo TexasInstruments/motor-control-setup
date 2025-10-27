@@ -38,15 +38,10 @@ install_ccs() {
 
     local ccs_untar_folder=`echo ${ccs_install_file} | sed -e "s|\.zip||g"`
 
-    if [ "${ccs_version}" == "12.7.0.00006" ];
-    then
-        ccs_install_file="CCS12.7.0.00006-sysconf-1_linux-x64.tar.gz"
-        ccs_url="http://sdopebuilds.toro.design.ti.com/CCS12.7.0/linux-x64/nightly/builds/CCS12.7.0.00006-sysconf-1/CCS12.7.0.00006-sysconf-1_linux-x64.tar.gz"
-    fi
-
     echo "[ccs $1] Checking ..."
     if [ ! -d "${install_dir}/${ccs_folder}" ]
     then
+        echo "[ccs ${ccs_version}] Installing ${ccs_install_file} at ${install_dir}/${ccs_folder}"
         wget_download ${ccs_folder} ${ccs_install_file} ${ccs_url}
         mkdir -p "${install_dir}"
         unzip -q ${ccs_install_file} -d "${install_dir}"
@@ -56,6 +51,8 @@ install_ccs() {
         #Clean-up
         rm -f ${ccs_install_file}
         rm -rf "${install_dir}/${ccs_untar_folder}"
+    else
+        echo "[ccs ${ccs_version}] Already installed at ${install_dir}/${ccs_folder}"
     fi
     echo "[${ccs_folder}] Done "
 }
@@ -83,10 +80,11 @@ install_nodejs() {
     local motor_control_folder=$2
     local nvm_pass=1
 
-    echo "[nodejs ${version}] Installing ..."
+    echo "[nodejs ${version}] Checking ..."
 
     # Check for possible node folders
     if [ ! -d ~/.nvm/versions/node/v${version} ] &&  [ ! -d ~/node-v${version} ] && ! command -v node &> /dev/null; then
+        echo "[nodejs ${version}] Installing"
         # node is not installed. Try using NVM first
         curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.35.3/install.sh -o install_nvm.sh
         if [ -e install_nvm.sh ]; then
@@ -119,6 +117,7 @@ install_nodejs() {
             rm -rf node-v${version}-linux-x64.tar.xz
         fi
     else
+        echo "[nodejs ${version}] Already installed"
         export PATH=~/.nvm/versions/node/v${version}/bin:$PATH
         export PATH=~/node-v${version}/bin:$PATH
     fi
@@ -129,8 +128,7 @@ install_nodejs() {
     if [ ! -d ${motor_control_folder}/node_modules ]; then
         echo "[nodejs packages] Installing required nodejs packages ..."
         cd ${motor_control_folder}
-        npm install lodash
-        npm install yargs
+        npm ci
         cd - 1>/dev/null
         echo "[nodejs packages] Done "
     fi
@@ -148,13 +146,15 @@ install_syscfg() {
     echo "[syscfg ${version}] Checking ..."
     if [ ! -d "${install_dir}/${syscfg_folder}" ]
     then
-        echo "[syscfg ${version}] Installing ..."
+        echo "[syscfg ${version}] Installing at ${install_dir}/${syscfg_folder}"
 
         wget_download ${syscfg_folder} ${syscfg_install_file} ${syscfg_url}
         ./${syscfg_install_file} --mode unattended --prefix "${install_dir}/${syscfg_folder}"
 
         # Clean-up
         rm -f ${syscfg_install_file}
+    else
+        echo "[syscfg ${version}] Already installed at ${install_dir}/${syscfg_folder}"
     fi
 
     echo "[syscfg ${version}] Done "
@@ -170,14 +170,40 @@ install_clang() {
     echo "[ti-cgt-armllvm ${version}] Checking ..."
     if [ ! -d "${install_dir}"/${clang_install_folder} ]
     then
+        echo "[ti-cgt-armllvm ${version}] Installing at ${install_dir}/${clang_install_folder}"
         wget -q https://dr-download.ti.com/software-development/ide-configuration-compiler-or-debugger/MD-ayxs93eZNN/${clang_url_folder}/${clang_install_file}
         chmod +x ${clang_install_file}
         ./${clang_install_file} --mode unattended --prefix "${install_dir}"
 
         #Clean-up
         rm -f ${clang_install_file}
+    else
+        echo "[ti-cgt-armllvm ${version}] Already installed at ${install_dir}/${clang_install_folder}"
     fi
     echo "[ti-cgt-armllvm ${version}] Done "
+}
+
+install_ti_cgt_pru() {
+    local version=$1
+    local ti_cgt_pru_url_folder=$2
+    local ti_cgt_pru_install_folder=$3
+    local ti_cgt_pru_install_file=$4
+    local install_dir=$5
+
+    echo "[ti-cgt-pru ${version}] Checking ..."
+    if [ ! -d "${install_dir}"/${ti_cgt_pru_install_folder} ]
+    then
+        echo "[ti-cgt-pru ${version}] Installing at ${install_dir}/${ti_cgt_pru_install_folder}"
+        wget -q https://dr-download.ti.com/software-development/ide-configuration-compiler-or-debugger/MD-FaNNGkDH7s/${ti_cgt_pru_url_folder}/${ti_cgt_pru_install_file}
+        chmod +x ${ti_cgt_pru_install_file}
+        ./${ti_cgt_pru_install_file} --mode unattended --prefix "${install_dir}/${ti_cgt_pru_install_folder}"
+
+        #Clean-up
+        rm -f ${ti_cgt_pru_install_file}
+    else
+        echo "[ti-cgt-pru ${version}] Already installed at ${install_dir}/${ti_cgt_pru_install_folder}"
+    fi
+    echo "[ti-cgt-pru ${version}] Done "
 }
 
 install_gcc_aarch64() {
@@ -191,11 +217,14 @@ install_gcc_aarch64() {
 
     if [ ! -d "${install_dir}"/${gcc_install_folder} ]
     then
+        echo "[gcc-arm-none-eabi ${version}] Installing at ${install_dir}/${gcc_install_folder}"
         wget_download ${gcc_install_folder} ${gcc_download_file} ${gcc_url}
         tar -C ${install_dir} -xf ${gcc_download_file}
 
         #Clean-up
         rm ${gcc_download_file}
+    else
+        echo "[gcc-arm-none-eabi ${version}] Already installed at ${install_dir}/${gcc_install_folder}"
     fi
     echo
 }
@@ -212,11 +241,14 @@ install_gcc_arm() {
 
     if [ ! -d "${install_dir}"/${gcc_install_folder} ]
     then
+        echo "[gcc-arm-none-eabi ${version}] Installing at ${install_dir}/${gcc_install_folder}"
         wget_download ${gcc_install_folder} ${gcc_download_file} ${gcc_url}
         tar -C ${install_dir} -xf ${gcc_download_file}
 
         #Clean-up
         rm ${gcc_download_file}
+    else
+        echo "[gcc-arm-none-eabi ${version}] Already installed at ${install_dir}/${gcc_install_folder}"
     fi
     echo
 }
@@ -230,7 +262,7 @@ install_doxygen() {
 
     if ! command -v doxygen  &> /dev/null
     then
-        echo "[doxygen ${version}]  Installing ..."
+        echo "[doxygen ${version}] Installing at /usr/local/bin"
         pushd ${HOME} 1>/dev/null
         git clone -q https://github.com/doxygen/doxygen.git
         cd doxygen
@@ -240,8 +272,10 @@ install_doxygen() {
         cmake -G "Unix Makefiles" .. 1>/dev/null
         make -j8    1>/dev/null
         sudo make install
-        echo "[doxygen ${version}]  Done"
+        echo "[doxygen ${version}] Done"
         popd 1>/dev/null
+    else
+        echo "[doxygen ${version}] Already installed at $(which doxygen)"
     fi
 }
 
@@ -253,22 +287,21 @@ install_mcu_plus_sdk() {
     local version_underscore=`echo ${version} | sed -e "s|\.|_|g"`
     local mcu_plus_sdk_download_file="mcu_plus_sdk_${platform}_${version_underscore}-linux-x64-installer.run"
 
-    echo "[mcu_plus_sdk_${platform}_${version_underscore}] Checking ..."
+    echo "[ mcu_plus_sdk_${platform}_${version_underscore} ] Checking ..."
 
     if [ ! -d "${install_dir}"/mcu_plus_sdk_${platform}_${version_underscore} ]
     then
-        echo "[ mcu_plus_sdk_${platform}_${version_underscore} ]  Downloading ..."
+        echo "[ mcu_plus_sdk_${platform}_${version_underscore} ] Installing at ${install_dir}/mcu_plus_sdk_${platform}_${version_underscore}"
         wget -q ${mcu_plus_sdk_url}/${mcu_plus_sdk_download_file} 1>/dev/null
         chmod +x ${mcu_plus_sdk_download_file}
-        echo "[ mcu_plus_sdk_${platform}_${version_underscore} ]  Installing ..."
+        echo "[ mcu_plus_sdk_${platform}_${version_underscore} ] Installing ..."
         ./${mcu_plus_sdk_download_file} --mode unattended --prefix ${install_dir}
-        # Remove version value from MCU + SDK installation path
-        pushd ${install_dir}
-        mv mcu_plus_sdk_${platform}_${version_underscore} mcu_plus_sdk 1>/dev/null
-        popd
+
         #Clean-up
         rm ${mcu_plus_sdk_download_file} 1>/dev/null
-        echo "[ mcu_plus_sdk_${platform}_${version_underscore} ]  Done ..."
+        echo "[ mcu_plus_sdk_${platform}_${version_underscore} ] Done ..."
+    else
+        echo "[ mcu_plus_sdk_${platform}_${version_underscore} ] Already installed at ${install_dir}/mcu_plus_sdk_${platform}_${version_underscore}"
     fi
     echo
 }
@@ -278,79 +311,29 @@ install_ind_comms_sdk() {
     local platform=$2
     local install_dir=$3
     local ind_comms_sdk_url=$4
-    local package_type=$5
     local version_underscore=`echo ${version} | sed -e "s|\.|_|g"`
-    local ind_comms_sdk_download_file="ind_comms_sdk_${platform}_${version_underscore}-linux-x64-installer.run"
-    local ind_comms_sdk_eval_download_file="ind_comms_sdk_${platform}_${version_underscore}_eval-linux-x64-installer.run"
-    local ind_comms_sdk_prod_download_file="ind_comms_sdk_${platform}_${version_underscore}_prod-linux-x64-installer.run"
+    local ind_comms_sdk_download_file="ind_comms_sdk_${platform}_${version_underscore}_eval-linux-x64-installer.run"
 
-    if [ "${platform}" == "am243x" ]; then
-        if [[ "${package_type}" == "prod" ]]; then
-        echo "[ind_comms_sdk_${platform}_${version_underscore}_prod] Checking ..."
-            if [ ! -d "${install_dir}"/ind_comms_sdk_${platform}_${version_underscore}_prod ]
-            then
-                echo "[ ind_comms_sdk_${platform}_${version_underscore}_prod ]  Downloading ..."
-                wget -q ${ind_comms_sdk_url}/${ind_comms_sdk_prod_download_file} 1>/dev/null
-                chmod +x ${ind_comms_sdk_prod_download_file}
-                echo "[ ind_comms_sdk_${platform}_${version_underscore}_prod ]  Installing ..."
-                ./${ind_comms_sdk_prod_download_file} --mode unattended --prefix ${install_dir}
-                # Remove version value from MCU + SDK installation path
-                pushd ${install_dir}
-                mv ind_comms_sdk_${platform}_${version_underscore} ind_comms_sdk 1>/dev/null
-                popd
-                pushd ${install_dir}/ind_comms_sdk 1>/dev/null
-                rm -rf mcu_plus_sdk 1>/dev/null
-                ln -s ../mcu_plus_sdk mcu_plus_sdk 1>/dev/null
-                popd
-                #Clean-up
-                rm ${ind_comms_sdk_prod_download_file} 1>/dev/null
-                echo "[ ind_comms_sdk_${platform}_${version_underscore}_prod ]  Done ..."
-            fi
-        else
-            echo "[ind_comms_sdk_${platform}_${version_underscore}_eval] Checking ..."
-            if [ ! -d "${install_dir}"/ind_comms_sdk_${platform}_${version_underscore}_eval ]
-            then
-                echo "[ ind_comms_sdk_${platform}_${version_underscore}_eval ]  Downloading ..."
-                wget -q ${ind_comms_sdk_url}/${ind_comms_sdk_eval_download_file} 1>/dev/null
-                chmod +x ${ind_comms_sdk_eval_download_file}
-                echo "[ ind_comms_sdk_${platform}_${version_underscore}_eval ]  Installing ..."
-                ./${ind_comms_sdk_eval_download_file} --mode unattended --prefix ${install_dir}
-                # Remove version value from MCU + SDK installation path
-                pushd ${install_dir}
-                mv ind_comms_sdk_${platform}_${version_underscore} ind_comms_sdk 1>/dev/null
-                popd
-                pushd ${install_dir}/ind_comms_sdk 1>/dev/null
-                rm -rf mcu_plus_sdk 1>/dev/null
-                ln -s ../mcu_plus_sdk mcu_plus_sdk 1>/dev/null
-                popd
-                #Clean-up
-                rm ${ind_comms_sdk_eval_download_file} 1>/dev/null
-                echo "[ ind_comms_sdk_${platform}_${version_underscore}_eval ]  Done ..."
-            fi
-        fi
+    echo "[ ind_comms_sdk_${platform}_${version_underscore}_eval ] Checking ..."
+    if [ ! -d "${install_dir}"/ind_comms_sdk_${platform}_${version_underscore} ]
+    then
+        echo "[ ind_comms_sdk_${platform}_${version_underscore}_eval ] Installing at ${install_dir}/ind_comms_sdk_${platform}_${version_underscore}"
+        echo "[ ind_comms_sdk_${platform}_${version_underscore}_eval ] Downloading ..."
+        wget -q ${ind_comms_sdk_url}/${ind_comms_sdk_download_file} 1>/dev/null
+        chmod +x ${ind_comms_sdk_download_file}
+        echo "[ ind_comms_sdk_${platform}_${version_underscore}_eval ] Installing ..."
+        ./${ind_comms_sdk_download_file} --mode unattended --prefix ${install_dir}
+
+        #Clean-up
+        rm ${ind_comms_sdk_download_file} 1>/dev/null
+        echo "[ ind_comms_sdk_${platform}_${version_underscore}_eval ] Done ..."
     else
-        echo "[ind_comms_sdk_${platform}_${version_underscore}] Checking ..."
-        if [ ! -d "${install_dir}"/ind_comms_sdk_${platform}_${version_underscore} ]
-        then
-            echo "[ ind_comms_sdk_${platform}_${version_underscore} ]  Downloading ..."
-            wget -q ${ind_comms_sdk_url}/${ind_comms_sdk_download_file} 1>/dev/null
-            chmod +x ${ind_comms_sdk_download_file}
-            echo "[ ind_comms_sdk_${platform}_${version_underscore} ]  Installing ..."
-            ./${ind_comms_sdk_download_file} --mode unattended --prefix ${install_dir}
-            # Remove version value from MCU + SDK installation path
-            pushd ${install_dir}
-            mv ind_comms_sdk_${platform}_${version_underscore} ind_comms_sdk 1>/dev/null
-            popd
-            pushd ${install_dir}/ind_comms_sdk 1>/dev/null
-            rm -rf mcu_plus_sdk 1>/dev/null
-            ln -s ../mcu_plus_sdk mcu_plus_sdk 1>/dev/null
-            popd
-            #Clean-up
-            rm ${ind_comms_sdk_download_file} 1>/dev/null
-            echo "[ ind_comms_sdk_${platform}_${version_underscore} ]  Done ..."
-        fi
+        echo "[ ind_comms_sdk_${platform}_${version_underscore}_eval ] Already installed at ${install_dir}/ind_comms_sdk_${platform}_${version_underscore}"
     fi
+
+    echo " "
 }
+
 #
 # This function is used to replace the tag/reference in a repo manifest file
 #

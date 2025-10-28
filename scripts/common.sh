@@ -196,7 +196,7 @@ install_ti_cgt_pru() {
         echo "[ti-cgt-pru ${version}] Installing at ${install_dir}/${ti_cgt_pru_install_folder}"
         wget -q https://dr-download.ti.com/software-development/ide-configuration-compiler-or-debugger/MD-FaNNGkDH7s/${ti_cgt_pru_url_folder}/${ti_cgt_pru_install_file}
         chmod +x ${ti_cgt_pru_install_file}
-        ./${ti_cgt_pru_install_file} --mode unattended --prefix "${install_dir}/${ti_cgt_pru_install_folder}"
+        ./${ti_cgt_pru_install_file} --mode unattended --prefix "${install_dir}"
 
         #Clean-up
         rm -f ${ti_cgt_pru_install_file}

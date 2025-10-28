@@ -55,6 +55,28 @@ install_ccs() {
         echo "[ccs ${ccs_version}] Already installed at ${install_dir}/${ccs_folder}"
     fi
     echo "[${ccs_folder}] Done "
+
+    echo "[tirex tirex_4.9.2.202202161704_cloud] Updating TIREX ..."
+
+    if [ ! -d "${install_dir}/${ccs_folder}/ccs/tirex4_org" ]
+    then
+        echo "[tirex tirex_4.9.2.202202161704_cloud] Downloading TIREX at ${install_dir}/${ccs_folder}/ccs ..."
+        #Install latest tirex from artifactory
+        local tirex_release=tirex_4.9.2.202202161704_cloud
+
+        pushd ${install_dir}/${ccs_folder}/ccs 1>/dev/null
+        mv tirex4 tirex4_org
+
+        wget -q https://artifactory.itg.ti.com/artifactory/generic-tirex-scripting-release/${tirex_release}.tar.gz
+        tar -xf ${tirex_release}.tar.gz
+        rm -rf ${tirex_release}.tar.gz
+
+        popd 1>/dev/null
+    else
+        echo "[tirex tirex_4.9.2.202202161704_cloud] Already installed at ${install_dir}/${ccs_folder}/ccs/tirex4_org"
+    fi
+
+    echo "[tirex tirex_4.9.2.202202161704_cloud] Updating TIREX ... Done"
 }
 
 ccs_discover_tools() {

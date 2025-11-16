@@ -39,7 +39,7 @@ MCU_PLUS_SDK_AM64X="11.01.00.17"
 MCU_PLUS_SDK_AM243X="11.01.00.17"
 MCU_PLUS_SDK_AM263X="11.00.00.19"
 MCU_PLUS_SDK_AM263PX="11.00.00.19"
-MCU_PLUS_SDK_AM261X="11.00.00.26"
+MCU_PLUS_SDK_AM261X="11.00.00.29"
 
 #MCU PLUS SDK NIGHTLY URL
 MCU_PLUS_SDK_AM64X_NIGHTLY_URL="http://mcupnas.dhcp.ti.com/release_area/nightly_builds/mcu_plus_sdk_am64x_nightly/latest/artifacts/output/webgen/exports"
@@ -60,7 +60,7 @@ MCU_PLUS_SDK_AM64X_RELEASE_URL="https://dr-download.ti.com/software-development/
 MCU_PLUS_SDK_AM243X_RELEASE_URL="https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-ouHbHEm1PK/${MCU_PLUS_SDK_AM243X}"
 MCU_PLUS_SDK_AM263X_RELEASE_URL="https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-r5FY9rRaGv/${MCU_PLUS_SDK_AM263X}"
 MCU_PLUS_SDK_AM263PX_RELEASE_URL="https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-JVtW1V4WfA/${MCU_PLUS_SDK_AM263PX}"
-MCU_PLUS_SDK_AM261X_RELEASE_URL="http://mcupnas.dhcp.ti.com/release_area/nightly_builds/mcu_plus_sdk_am261x/446-2025-10-10_10-24-23/artifacts/output/webgen/exports"
+MCU_PLUS_SDK_AM261X_RELEASE_URL="http://mcupnas.dhcp.ti.com/release_area/nightly_builds/mcu_plus_sdk_am261x/455-2025-11-14_00-58-31/artifacts/output/webgen/exports/"
 
 #INDUSTRIAL COMMUNICATIONS SDK VERSION"
 IND_COMMS_SDK_AM243X="2025.00.00.05"

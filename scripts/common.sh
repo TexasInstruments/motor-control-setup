@@ -320,6 +320,7 @@ install_ind_comms_sdk() {
         echo "[ ind_comms_sdk_${platform}_${version_underscore}_eval ] Installing at ${install_dir}/ind_comms_sdk_${platform}_${version_underscore}"
         echo "[ ind_comms_sdk_${platform}_${version_underscore}_eval ] Downloading ..."
         wget -q ${ind_comms_sdk_url}/${ind_comms_sdk_download_file} 1>/dev/null
+        find / -name "${ind_comms_sdk_download_file}" 2>/dev/null
         chmod +x ${ind_comms_sdk_download_file}
         echo "[ ind_comms_sdk_${platform}_${version_underscore}_eval ] Installing ..."
         ./${ind_comms_sdk_download_file} --mode unattended --prefix ${install_dir}

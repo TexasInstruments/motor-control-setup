@@ -60,7 +60,7 @@ MCU_PLUS_SDK_AM64X_RELEASE_URL="https://dr-download.ti.com/software-development/
 MCU_PLUS_SDK_AM243X_RELEASE_URL="https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-ouHbHEm1PK/${MCU_PLUS_SDK_AM243X}"
 MCU_PLUS_SDK_AM263X_RELEASE_URL="https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-r5FY9rRaGv/${MCU_PLUS_SDK_AM263X}"
 MCU_PLUS_SDK_AM263PX_RELEASE_URL="https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-JVtW1V4WfA/${MCU_PLUS_SDK_AM263PX}"
-MCU_PLUS_SDK_AM261X_RELEASE_URL="https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-h64OlWnQrg//${MCU_PLUS_SDK_AM261X}"
+MCU_PLUS_SDK_AM261X_RELEASE_URL="https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-h64OlWnQrg/${MCU_PLUS_SDK_AM261X}"
 
 #INDUSTRIAL COMMUNICATIONS SDK VERSION"
 IND_COMMS_SDK_AM243X="2025.00.00.08"

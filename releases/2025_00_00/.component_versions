@@ -83,7 +83,7 @@ IND_COMMS_SDK_AM263PX_RC_URL="http://pruicss-nas.dhcp.ti.com/release_builds/INDU
 IND_COMMS_SDK_AM261X_RC_URL="http://pruicss-nas.dhcp.ti.com/release_builds/INDUSTRIAL-COMMUNICATIONS-SDK/2025.00.00/2025_00_00_08/am261x/standard/artifacts/output/webgen/exports"
 #INDUSTRIAL COMMUNICATIONS SDK RELEASE URL
 # Needs to be updated
-IND_COMMS_SDK_AM243X_RELEASE_URL="https://dr-download.ti.com/secure/software-development/software-development-kit-sdk/MD-HPWKAC6ucZ/${IND_COMMS_SDK_AM243PX}"
+IND_COMMS_SDK_AM243X_RELEASE_URL="https://dr-download.ti.com/secure/software-development/software-development-kit-sdk/MD-HPWKAC6ucZ/${IND_COMMS_SDK_AM243X}"
 IND_COMMS_SDK_AM263X_RELEASE_URL="http://pruicss-nas.dhcp.ti.com/release_builds/INDUSTRIAL-COMMUNICATIONS-SDK/10.00.00/am263x/10_00_00_12/pruicss-nas.dhcp.ti.com/artifacts/output/webgen/exports"
 IND_COMMS_SDK_AM263PX_RELEASE_URL="https://dr-download.ti.com/secure/software-development/software-development-kit-sdk/MD-goX7vG2JEX/${IND_COMMS_SDK_AM263PX}"
-IND_COMMS_SDK_AM261X_RELEASE_URL="https://dr-download.ti.com/secure/software-development/software-development-kit-sdk/MD-Dumv3nxEis/${IND_COMMS_SDK_AM261PX}"
+IND_COMMS_SDK_AM261X_RELEASE_URL="https://dr-download.ti.com/secure/software-development/software-development-kit-sdk/MD-Dumv3nxEis/${IND_COMMS_SDK_AM261X}"
